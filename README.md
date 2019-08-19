@@ -1,3 +1,3 @@
 # Daily-Journal
 
-## Daily Journal 1: First Commit with MVP
+## Daily Journal 2: Added UI/UX

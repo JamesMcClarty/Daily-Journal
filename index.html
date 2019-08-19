@@ -6,35 +6,40 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Daily Journal</title>
     <link rel="stylesheet" href="styles/journal.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <form action="">
+    <h1>Journal Entry Form</h1>
+    <div class="container"> <!--Seperate Container-->
+        <form action=""> <!--Form container-->
 
-        <fieldset>
-            <label for="journalDate">Date of entry</label>
-            <input type="date" name="journalDate" id="journalDate">
-        </fieldset>
+            <fieldset> <!--Journal Date Fieldset-->
+                <label for="journalDate">Date of entry</label>
+                <input type="date" name="journalDate" id="journalDate">
+            </fieldset>
 
-        <fieldset>
-            <label for="conceptsForm">Concepts Covered</label>
-            <input type="text" name="conceptsForm" id="conceptsForm">
-        </fieldset>
+            <fieldset> <!--Concepts Covered Text Fieldset-->
+                <label for="conceptsForm">Concepts Covered</label>
+                <input type="text" name="conceptsForm" id="conceptsForm">
+            </fieldset>
 
-        <fieldset>
-            <label for="journalEntry">Journal Entry</label>
-            <textarea rows="4" cols="50" name="journalEntry"></textarea>
-        </fieldset>
-        
-        <fieldset>
-            <label for="moodOption">Mood for the day</label>
-            <select name="moodOption">
-                <option value="happy">Happy</option>
-                <option value="sad">Sad</option>
-                <option value="angry">Angry</option>
-                <option value="confused">Confused</option>
-            </select>            
-        </fieldset>
-
-    </form>
+            <fieldset> <!--Journal Entry Textarea Fieldset-->
+                <label for="journalEntry">Journal Entry</label>
+                <textarea rows="4" name="journalEntry"></textarea>
+            </fieldset>
+            
+            <fieldset> <!--Mood Option Select Fieldset-->
+                <label for="moodOption">Mood for the day</label>
+                <select name="moodOption">
+                    <option value="happy">Happy</option>
+                    <option value="sad">Sad</option>
+                    <option value="angry">Angry</option>
+                    <option value="confused">Confused</option>
+                </select>            
+            </fieldset>
+        </form>
+        <input class="submitButton" type="submit" value="Submit"> <!--Submit Button-->
+    </div>
 </body>
 </html>
