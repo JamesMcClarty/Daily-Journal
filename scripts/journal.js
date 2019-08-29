@@ -1,17 +1,16 @@
-const journalEntry = {
-    date: "07/24/2018",
-    concept: "Array methods",
-    entry: "We learned about 4 different array methods today. forEach made sense, but the others still confuse me.",
-    mood: "Ok"
-};
-
-const javaEntryArray = [journalEntry];
+fetch("http://localhost:8088/entries") // Fetch from the API
+    .then(entries => entries.json())  // Parse as JSON
+    .then(entriesList => {
+        entriesList.forEach(entry => {
+            fillArticle(entry);
+        })
+    })
 
 const journalArray = document.querySelector(".journalArray");
 
 const fillJournalEntry = (entry) => {
 
-    return`
+    return `
     <div>
     <h3> ${entry.concept} </h3>
     <p> ${entry.date} </p>
@@ -21,4 +20,6 @@ const fillJournalEntry = (entry) => {
     `
 }
 
-journalArray.innerHTML += fillJournalEntry(journalEntry);
+const fillArticle = (journalEntry) => {
+    journalArray.innerHTML += fillJournalEntry(journalEntry);
+}
