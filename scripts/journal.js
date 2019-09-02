@@ -1,25 +1,12 @@
-fetch("http://localhost:8088/entries") // Fetch from the API
-    .then(entries => entries.json())  // Parse as JSON
-    .then(entriesList => {
-        entriesList.forEach(entry => {
-            fillArticle(entry);
-        })
-    })
+/*
+    Main application logic that uses the functions and objects
+    defined in the other JavaScript files.
 
-const journalArray = document.querySelector(".journalArray");
+    Change the fake variable names below to what they should be
+    to get the data and display it.
+*/
+const apiObject = Object.create(API);
+const entryComponentObject = Object.create(entryComponentClass);
 
-const fillJournalEntry = (entry) => {
-
-    return `
-    <div>
-    <h3> ${entry.concept} </h3>
-    <p> ${entry.date} </p>
-    <p> ${entry.entry} </p>
-    <p> ${entry.mood} </p>
-    </div>
-    `
-}
-
-const fillArticle = (journalEntry) => {
-    journalArray.innerHTML += fillJournalEntry(journalEntry);
-}
+apiObject.getJournalEntries()
+.then(data => entryComponentObject.fillArticle(data))
