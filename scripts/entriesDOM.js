@@ -11,3 +11,5 @@ const entryDOMClass = {
         `
     }
 }
+
+export default entryDOMClass
