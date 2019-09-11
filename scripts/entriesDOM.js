@@ -1,6 +1,5 @@
 const entryDOMClass = {
     fillJournalEntry: (entry) => {
-        console.table(entry)
         return `
         <div>
         <h3> ${entry.concept} </h3>
@@ -11,3 +10,5 @@ const entryDOMClass = {
         `
     }
 }
+
+export default entryDOMClass
