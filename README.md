@@ -9,3 +9,5 @@
 ## Daily Journal 5: Created Objects to Fetch JSON data
 
 ## Daily Journal 6-7: Added ES6 and a button to post to JSON file.
+
+## Daily Journal 8: Added radio buttons to sort the JSON entries.

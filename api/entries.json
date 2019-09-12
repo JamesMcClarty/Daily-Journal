@@ -1,53 +1,25 @@
 {
   "entries": [
     {
-      "date": "2019-09-18",
-      "concept": "blah",
-      "entry": "blah",
-      "mood": "happy",
+      "date": "2019-09-10",
+      "concept": "Happy",
+      "entry": "fdsafas",
+      "mood": "Happy",
       "id": 1
     },
     {
-      "date": "",
-      "concept": "fdasgfasgd",
-      "entry": "dagdsgasgdasdgv",
-      "mood": "happy",
+      "date": "2019-09-12",
+      "concept": "Sad",
+      "entry": "fdsafas",
+      "mood": "Happy",
       "id": 2
     },
     {
-      "date": "",
-      "concept": "fdsafadsffdsagfasgasdgasgd",
-      "entry": "4",
-      "mood": "happy",
+      "date": "2019-09-12",
+      "concept": "Angry",
+      "entry": "fdsafas",
+      "mood": "Angry",
       "id": 3
-    },
-    {
-      "date": "",
-      "concept": "fdsafasdgdadsgsa",
-      "entry": "fdsafasgfadga",
-      "mood": "happy",
-      "id": 4
-    },
-    {
-      "date": "",
-      "concept": "fasdfasf",
-      "entry": "fdasfafdgqsgagdgdgasdgagd",
-      "mood": "happy",
-      "id": 5
-    },
-    {
-      "date": "2019-09-27",
-      "concept": "vdfSAF",
-      "entry": "FDSAF",
-      "mood": "happy",
-      "id": 6
-    },
-    {
-      "date": "2019-09-27",
-      "concept": "fasdfafsd",
-      "entry": "dsfaadsf",
-      "mood": "angry",
-      "id": 7
     }
   ]
 }
