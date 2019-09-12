@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,46 +10,63 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
 </head>
+
 <body>
     <h1>Journal Entry Form</h1>
-    <div class="container"> <!--Seperate Container-->
-        <form action=""> <!--Form container-->
+    <div class="container">
+        <!--Seperate Container-->
+        <form action="">
+            <!--Form container-->
 
-            <fieldset> <!--Journal Date Fieldset-->
+            <fieldset class="contained-fieldset">
+                <!--Journal Date Fieldset-->
                 <label for="journalDate">Date of entry</label>
-                <input type="date" name="journalDate" id="journalDate">
+                <input type="date" name="journalDate" id="journalDate" class="formInput">
             </fieldset>
 
-            <fieldset> <!--Concepts Covered Text Fieldset-->
+            <fieldset class="contained-fieldset">
+                <!--Concepts Covered Text Fieldset-->
                 <label for="conceptsForm">Concepts Covered</label>
-                <input type="text" name="conceptsForm" id="conceptsForm">
+                <input type="text" name="conceptsForm" id="conceptsForm" class="formInput">
             </fieldset>
 
-            <fieldset> <!--Journal Entry Textarea Fieldset-->
+            <fieldset class="contained-fieldset">
+                <!--Journal Entry Textarea Fieldset-->
                 <label for="journalEntry">Journal Entry</label>
-                <textarea rows="4" name="journalEntry" id="journalEntry"></textarea>
+                <textarea rows="4" name="journalEntry" id="journalEntry" class="formInput"></textarea>
             </fieldset>
-            
-            <fieldset> <!--Mood Option Select Fieldset-->
+
+            <fieldset class="contained-fieldset">
+                <!--Mood Option Select Fieldset-->
                 <label for="moodOption">Mood for the day</label>
                 <select name="moodOption" id="moodOption">
-                    <option value="happy">Happy</option>
-                    <option value="sad">Sad</option>
-                    <option value="angry">Angry</option>
-                    <option value="confused">Confused</option>
-                </select>            
+                    <option value="Happy">Happy</option>
+                    <option value="Sad">Sad</option>
+                    <option value="Angry">Angry</option>
+                    <option value="Confused">Confused</option>
+                </select>
             </fieldset>
         </form>
-        <input id="submitButton" type="submit" value="Submit"> <!--Submit Button-->
+        <input id="submitButton" type="submit" value="Submit">
+        <!--Submit Button-->
     </div>
 
-    <article class = "journalArray">
+    <fieldset class="radioForm">
+        <legend>Search by:</legend>
+        <form>
+                <input type="radio" name="moodRadio" id="happyRadio" value="Happy"> Happy
+                <input type="radio" name="moodRadio" id="sadRadio" value="Sad"> Sad
+                <input type="radio" name="moodRadio" id="angryRadio" value="Angry"> Angry
+                <input type="radio" name="moodRadio" id="confusedRadio" value="Confused"> Confused
+        </form>
+    </fieldset>
+
+    <article class="journalArray">
 
     </article>
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-    <script type ="module" src="scripts/journal.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="module" src="scripts/journal.js"></script>
 </body>
+
 </html>

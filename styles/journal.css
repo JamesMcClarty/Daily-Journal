@@ -1,10 +1,11 @@
+
 body{
     background-image: linear-gradient(rgb(230, 247, 176), white);
     background-repeat: no-repeat;
     background-size: auto;
 }
 
-fieldset{
+.contained-fieldset{
     margin-top: 2px;
     display: flex;
     flex-direction: column;
@@ -16,7 +17,7 @@ h1{
     margin-left: 60px;
 }
 
-input, textarea, select{
+.formInput, textarea, select, #submitButton{
     font-family: 'Times New Roman', Times, serif;
     font-size: 120%;
     width: 100%;
@@ -36,9 +37,10 @@ label{
     max-width: 600px;
     height: 0,auto;
     margin-left: 60px;
+    border-bottom: solid rgb(100, 117, 46);
 }
 
-.submitButton{
+#submitButton{
     background-image: linear-gradient(white, rgb(230, 247, 176));
     font-family: 'Times New Roman', Times, serif;
     border-style: groove;
@@ -69,6 +71,18 @@ label{
 
     h1{
         margin-left: 2px;
-    }
-    
+    }   
+}
+
+legend{
+    color: rgb(100, 117, 46);
+    font-weight: bold;
+}
+
+.radioForm{
+    margin-top: 2px;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(242, 251, 215);
+    border: 2px solid rgb(100, 117, 46);
 }
