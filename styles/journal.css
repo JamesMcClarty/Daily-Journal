@@ -40,7 +40,7 @@ label{
     border-bottom: solid rgb(100, 117, 46);
 }
 
-#submitButton{
+#submitButton, .deleteButton{
     background-image: linear-gradient(white, rgb(230, 247, 176));
     font-family: 'Times New Roman', Times, serif;
     border-style: groove;
@@ -55,11 +55,11 @@ label{
     cursor: pointer;
     }
 
-.submitButton:hover{
+.submitButton:hover, .deleteButton:hover{
     opacity:1;
 }
 
-.submitButton:active{
+.submitButton:active, .deleteButton:hover{
     background-image: linear-gradient(rgb(230,230,230), rgb(200, 217, 146));
 }
 
