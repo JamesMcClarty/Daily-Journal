@@ -28,7 +28,9 @@ saveButton.click(function () {
                         apiImport.getJournalEntries() //refresh page
                             .then(data => {
                                 entryComponent.fillArticle(data) // Fills the article
-
+                                var radio = document.getElementsByName("moodRadio");
+                                for (let i = 0; i < radio.length; i++)
+                                    radio[i].checked = false; // Unchecks the radio buttons
                                 data.forEach(element => { //For each data entry, assign an event handler
                                     $(`#deleteButton-${element.id}`).click(deleteEntryButton)
                                 });
@@ -70,6 +72,9 @@ const deleteEntryButton = (event) => { //Deletes the journal entry
             apiImport.getJournalEntries() //Repopulates
                 .then(data => {
                     entryComponent.fillArticle(data)
+                    var radio = document.getElementsByName("moodRadio");
+                    for (let i = 0; i < radio.length; i++)
+                        radio[i].checked = false; // Unchecks the radio buttons
                     data.forEach(element => {
                         $(`#deleteButton-${element.id}`).click(deleteEntryButton)
                     })
