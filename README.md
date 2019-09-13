@@ -14,3 +14,5 @@
 
 ## Daily Journal 9: Added a button to delete JSON posts
 
+## Daily Journal 10: Added a button to edit JSON posts
+

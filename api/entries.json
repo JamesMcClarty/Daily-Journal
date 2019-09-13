@@ -2,15 +2,8 @@
   "entries": [
     {
       "date": "2019-09-19",
-      "concept": "Happy",
-      "entry": "3",
-      "mood": "Happy",
-      "id": 3
-    },
-    {
-      "date": "2019-09-19",
       "concept": "Sad",
-      "entry": "2",
+      "entry": "Not Happy",
       "mood": "Sad",
       "id": 5
     },
@@ -48,6 +41,20 @@
       "entry": "dafdfafasdfaafdadfaf",
       "mood": "Confused",
       "id": 11
+    },
+    {
+      "date": "2019-09-19",
+      "concept": "Sad",
+      "entry": "2",
+      "mood": "Sad",
+      "id": 12
+    },
+    {
+      "date": "2019-09-19",
+      "concept": "Sad",
+      "entry": "2",
+      "mood": "Sad",
+      "id": 13
     }
   ]
 }

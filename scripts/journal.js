@@ -1,5 +1,6 @@
 import apiImport from "./data.js"
 import entryComponent from "./entryComponent.js"
+import API from "./data.js";
 
 /*
     Importing objects from different JS files and executing them 
@@ -10,8 +11,8 @@ apiImport.getJournalEntries() //Initial page load
     .then(data => {
         entryComponent.fillArticle(data) //Fills article
         data.forEach(element => { // For each element, assigns a delete button event handler.
-            console.log(element.id)
             $(`#deleteButton-${element.id}`).click(deleteEntryButton)
+            $(`#editButton-${element.id}`).click(editEntryButton)
         });
     })
 
@@ -19,7 +20,7 @@ const saveButton = $("#submitButton")//Assign button
 
 // IMPORTANT
 saveButton.click(function () {
-    if (document.querySelector(".formClass").id === "") {
+    if (document.querySelector("#editEntryId").value === "") { //If the hidden value is empty, make a new entry
         const journalObject = entryComponent.makeObject(); // Make the object
         if (journalObject != undefined) { // If journal object isn't undefined
             apiImport.saveJournalEntries(journalObject) //Saves entry
@@ -33,6 +34,7 @@ saveButton.click(function () {
                                     radio[i].checked = false; // Unchecks the radio buttons
                                 data.forEach(element => { //For each data entry, assign an event handler
                                     $(`#deleteButton-${element.id}`).click(deleteEntryButton)
+                                    $(`#editButton-${element.id}`).click(editEntryButton)
                                 });
 
                             })
@@ -40,6 +42,30 @@ saveButton.click(function () {
                     }
                 })
         }
+    }
+
+    else { //If the hidden value is populated
+        API.editJournalEntry(document.getElementById("editEntryId").value)
+            .then(data => {
+                $("#journalDate").val("")
+                $("#conceptsForm").val("")
+                $("#journalEntry").val("")
+                $("#moodOption").val("")
+                document.getElementById("editEntryId").value = ""
+                apiImport.getJournalEntries() //Repopulates
+                    .then(apiData => {
+                        document.querySelector(".journalArray").innerHTML = " " // clears article
+                        entryComponent.fillArticle(apiData)
+                        var radio = document.getElementsByName("moodRadio");
+                        for (let i = 0; i < radio.length; i++)
+                            radio[i].checked = false; // Unchecks the radio buttons
+                        apiData.forEach(element => {
+                            $(`#deleteButton-${element.id}`).click(deleteEntryButton)
+                            $(`#editButton-${element.id}`).click(editEntryButton)
+                        })
+                    })
+            })
+
     }
 })
 
@@ -60,6 +86,7 @@ const radioFunctionSearch = (event) => { //Event for Radio Buttons
             entryComponent.fillArticle(sortedData) //Populates article with results.
             sortedData.forEach(element => {
                 $(`#deleteButton-${element.id}`).click(deleteEntryButton)
+                $(`#editButton-${element.id}`).click(editEntryButton)
             })
         })
 }
@@ -77,8 +104,22 @@ const deleteEntryButton = (event) => { //Deletes the journal entry
                         radio[i].checked = false; // Unchecks the radio buttons
                     data.forEach(element => {
                         $(`#deleteButton-${element.id}`).click(deleteEntryButton)
+                        $(`#editButton-${element.id}`).click(editEntryButton)
                     })
                 })
+        })
+}
+
+const editEntryButton = (event) => {
+    let entryNum = event.target.id.split("-")
+    document.getElementById("editEntryId").value = entryNum[1]
+    fetch(`http://localhost:8088/entries/${entryNum[1]}`)
+        .then(response => response.json())
+        .then(parsedRespone => {
+            $("#journalDate").val(parsedRespone.date)
+            $("#conceptsForm").val(parsedRespone.concept)
+            $("#journalEntry").val(parsedRespone.entry)
+            $("#moodOption").val(parsedRespone.mood)
         })
 }
 
