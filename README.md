@@ -16,4 +16,5 @@
 
 ## Daily Journal 10: Added a button to edit JSON posts
 
-## Daily Journal 11: 
+## Daily Journal 11: Added a search bar
+
