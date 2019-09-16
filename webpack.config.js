@@ -2,7 +2,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const WebpackShellPlugin = require("webpack-shell-plugin");
 module.exports = {
-  entry: "./src/scripts/main.js",
+  entry: "./src/scripts/journal.js",
   devServer: {
     writeToDisk: true,
     clientLogLevel: "error",
@@ -30,10 +30,10 @@ module.exports = {
   },
   plugins: [
     new WebpackShellPlugin({
-      onBuildEnd: ["json-server -p 8088 -w api/database.json"]
+      onBuildEnd: ["json-server -p 8088 -w api/entries.json"]
     }),
     new HtmlWebPackPlugin({
-      template: "./src/index.html",
+      template: "./index.html",
       filename: "./index.html"
     }),
     new CopyPlugin([{ from: "./src/styles", to: "./styles" }])

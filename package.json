@@ -23,7 +23,7 @@
     "webpack-shell-plugin": "^0.5.0"
   },
   "repository": {
-  "type": "git",
-  "url": "git@github.com:JamesMcClarty/Daily-Journal.git"
-}
+    "type": "git",
+    "url": "git@github.com:JamesMcClarty/Daily-Journal.git"
+  }
 }
