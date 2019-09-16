@@ -1,7 +1,7 @@
 {
   "name": "daily-journal",
   "version": "1.0.0",
-  "description": "",
+  "description": "A program that adds, removes, and edits daily journal",
   "scripts": {
     "start": "webpack-dev-server --mode development --open"
   },
@@ -21,5 +21,9 @@
     "webpack-cli": "^3.3.5",
     "webpack-dev-server": "^3.7.2",
     "webpack-shell-plugin": "^0.5.0"
-  }
+  },
+  "repository": {
+  "type": "git",
+  "url": "git@github.com:JamesMcClarty/Daily-Journal.git"
+}
 }
