@@ -123,6 +123,37 @@ const editEntryButton = (event) => {
         })
 }
 
+//Function searches the keyword in entries upon pressing enter.
+const searchEntry = (event) => {
+
+    if (event.which === 13) {
+        let dataArray = []
+        apiImport.getJournalEntries()
+            .then(data => data.forEach(entry => {
+                for (const value of Object.values(entry)) {
+                    let searchResult = event.target.value.toString().toUpperCase()
+                    let valueResult = value.toString().toUpperCase()
+                    if (valueResult.includes(searchResult)) {
+                        dataArray.push(entry)
+                        break
+                    }
+                }
+
+                if (dataArray.length != 0) {
+                    document.querySelector(".journalArray").innerHTML = " " // clears article
+                    entryComponent.fillArticle(dataArray) //Fills article
+                    data.forEach(element => { // For each element, assigns a delete button event handler.
+                        $(`#deleteButton-${element.id}`).click(deleteEntryButton)
+                        $(`#editButton-${element.id}`).click(editEntryButton)
+                    });
+                }
+            }))
+    }
+}
+
+//Searching for text on keypress
+document.getElementById("searchBox").addEventListener('keypress', searchEntry)
+
 //Radio Buttons
 $("#happyRadio").click(radioFunctionSearch)
 $("#sadRadio").click(radioFunctionSearch)
