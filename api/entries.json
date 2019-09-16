@@ -1,34 +1,6 @@
 {
   "entries": [
     {
-      "date": "2019-09-19",
-      "concept": "Sad",
-      "entry": "Not Happy",
-      "mood": "Sad",
-      "id": 5
-    },
-    {
-      "date": "2019-09-19",
-      "concept": "Sad",
-      "entry": "3",
-      "mood": "Sad",
-      "id": 6
-    },
-    {
-      "date": "2019-09-19",
-      "concept": "Angry",
-      "entry": "2",
-      "mood": "Angry",
-      "id": 8
-    },
-    {
-      "date": "2019-09-19",
-      "concept": "Angry",
-      "entry": "3",
-      "mood": "Angry",
-      "id": 9
-    },
-    {
       "date": "2019-09-17",
       "concept": "fadsfasd",
       "entry": "fadsfsafdfa",
@@ -55,6 +27,20 @@
       "entry": "2",
       "mood": "Sad",
       "id": 13
+    },
+    {
+      "date": "2019-09-28",
+      "concept": "Why",
+      "entry": "Isn't this working?",
+      "mood": "Confused",
+      "id": 14
+    },
+    {
+      "date": "2019-09-28",
+      "concept": "Why",
+      "entry": "Isn't this working?",
+      "mood": "Confused",
+      "id": 15
     }
   ]
 }

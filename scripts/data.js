@@ -1,5 +1,3 @@
-import entryComponent from "./entryComponent.js"
-
 const API = {
     getJournalEntries: function () { //Gets the entire JSON list
         return fetch("http://localhost:8088/entries")
@@ -29,10 +27,10 @@ const API = {
     editJournalEntry: function (id) { //Edits journal entry
 
         const editedEntry = {
-            date: $("#journalDate").val(),
-            concept: $("#conceptsForm").val(),
-            entry: $("#journalEntry").val(),
-            mood: $("#moodOption").val()
+            date: document.querySelector("#journalDate").value,
+            concept: document.querySelector("#conceptsForm").value,
+            entry: document.querySelector("#journalEntry").value,
+            mood: document.querySelector("#moodOption").value
         }
 
         return fetch(`http://localhost:8088/entries/${id}`, {

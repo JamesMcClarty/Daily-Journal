@@ -2,7 +2,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const WebpackShellPlugin = require("webpack-shell-plugin");
 module.exports = {
-  entry: "./src/scripts/journal.js",
+  entry: "./scripts/main.js",
   devServer: {
     writeToDisk: true,
     clientLogLevel: "error",

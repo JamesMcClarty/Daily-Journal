@@ -1,4 +1,4 @@
-import entriesDOM from "./entriesDOM.js"
+import entriesDOM from "./entriesDOM"
 
 const entryComponentClass = {
 
@@ -12,10 +12,10 @@ const entryComponentClass = {
     makeObject: function(){
         //Makes journal object
         const newJournalEntry = {
-            date: $("#journalDate").val(),
-            concept: $("#conceptsForm").val(),
-            entry: $("#journalEntry").val(),
-            mood: $("#moodOption").val()
+            date: document.querySelector("#journalDate").value,
+            concept: document.querySelector("#conceptsForm").value,
+            entry: document.querySelector("#journalEntry").value,
+            mood: document.querySelector("#moodOption").value
         }
         //If any of the fields are empty
         if (newJournalEntry.date === "" ||
