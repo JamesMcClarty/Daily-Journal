@@ -1,18 +1,50 @@
 {
   "entries": [
     {
-      "date": "2019-09-06",
-      "concept": "sfa",
-      "entry": "safadfasfsaf",
-      "mood": "Angry",
-      "id": 6
+      "date": "2019-09-20",
+      "concept": "agsgsa",
+      "entry": "gafafgaga",
+      "moodId": "1",
+      "id": 1
     },
     {
-      "date": "2019-09-18",
-      "concept": "fasfas",
-      "entry": "here I am",
-      "mood": "Sad",
-      "id": 7
+      "date": "2019-09-20",
+      "concept": "agsgsa",
+      "entry": "gafafgaga",
+      "moodId": "2",
+      "id": 2
+    },
+    {
+      "date": "2019-09-20",
+      "concept": "agsgsa",
+      "entry": "gafafgaga",
+      "moodId": "3",
+      "id": 3
+    },
+    {
+      "date": "2019-09-20",
+      "concept": "agsgsa",
+      "entry": "gafafgaga",
+      "moodId": "4",
+      "id": 4
+    }
+  ],
+  "moods": [
+    {
+      "id": 1,
+      "type": "Happy"
+    },
+    {
+      "id": 2,
+      "type": "Sad"
+    },
+    {
+      "id": 3,
+      "type": "Angry"
+    },
+    {
+      "id": 4,
+      "type": "Confused"
     }
   ]
 }

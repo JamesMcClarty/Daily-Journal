@@ -20,3 +20,5 @@
 
 ## Daily Journal 12: Added a webpack and refactored the files.
 
+## Daily Journal 13: Added Data Relationships
+

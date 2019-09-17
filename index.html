@@ -42,10 +42,10 @@
                 <!--Mood Option Select Fieldset-->
                 <label for="moodOption">Mood for the day</label>
                 <select name="moodOption" id="moodOption">
-                    <option value="Happy">Happy</option>
-                    <option value="Sad">Sad</option>
-                    <option value="Angry">Angry</option>
-                    <option value="Confused">Confused</option>
+                    <option value="1">Happy</option>
+                    <option value="2">Sad</option>
+                    <option value="3">Angry</option>
+                    <option value="4">Confused</option>
                 </select>
             </fieldset>
         </form>
@@ -56,22 +56,27 @@
     <div class="searchingTools">
         <fieldset class="radioForm">
             <legend>Search by:</legend>
-            <form>
-                <input type="radio" name="moodRadio" id="happyRadio" value="Happy"> Happy
-                <input type="radio" name="moodRadio" id="sadRadio" value="Sad"> Sad
-                <input type="radio" name="moodRadio" id="angryRadio" value="Angry"> Angry
-                <input type="radio" name="moodRadio" id="confusedRadio" value="Confused"> Confused
+            <form class=formList>
+                <!--Radio Buttons-->
+                <div>
+                    <input type="radio" name="moodRadio" id="happyRadio" value="1"> Happy
+                    <input type="radio" name="moodRadio" id="sadRadio" value="2"> Sad
+                </div>
+                <div>
+                    <input type="radio" name="moodRadio" id="angryRadio" value="3"> Angry
+                    <input type="radio" name="moodRadio" id="confusedRadio" value="4"> Confused
+                </div>
             </form>
 
         </fieldset>
-
         <fieldset class="radioForm">
             <legend>Search Journal Entries:</legend>
+            <!--Search TextBox-->
             <input type="text" name="searchBox" id="searchBox" value="">
         </fieldset>
 
     </div>
-
+    <!--Scripts to Webpack-->
     <article class="journalArray">
 
     </article>
