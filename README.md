@@ -18,3 +18,5 @@
 
 ## Daily Journal 11: Added a search bar
 
+## Daily Journal 12: Added a webpack and refactored the files.
+

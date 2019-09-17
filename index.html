@@ -17,7 +17,8 @@
         <!--Seperate Container-->
         <form action="">
             <!--Form container-->
-            <input type="hidden" id="editEntryId" value="" /><!--Hidden ID-->
+            <input type="hidden" id="editEntryId" value="" />
+            <!--Hidden ID-->
 
             <fieldset class="contained-fieldset">
                 <!--Journal Date Fieldset-->
@@ -52,31 +53,28 @@
         <!--Submit Button-->
     </div>
 
-    <div class = "searchingTools">
-    <fieldset class="radioForm">
-        <legend>Search by:</legend>
-        <form>
+    <div class="searchingTools">
+        <fieldset class="radioForm">
+            <legend>Search by:</legend>
+            <form>
                 <input type="radio" name="moodRadio" id="happyRadio" value="Happy"> Happy
                 <input type="radio" name="moodRadio" id="sadRadio" value="Sad"> Sad
                 <input type="radio" name="moodRadio" id="angryRadio" value="Angry"> Angry
                 <input type="radio" name="moodRadio" id="confusedRadio" value="Confused"> Confused
-        </form>
+            </form>
 
-    </fieldset>
+        </fieldset>
 
-    <fieldset class="radioForm">
-        <legend>Search Journal Entries:</legend>
-            <input type="text" name="searchBox" id="searchBox" value="" >
-    </fieldset>
+        <fieldset class="radioForm">
+            <legend>Search Journal Entries:</legend>
+            <input type="text" name="searchBox" id="searchBox" value="">
+        </fieldset>
 
-</div>
+    </div>
 
     <article class="journalArray">
 
     </article>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script type="module" src="scripts/journal.js"></script>
 </body>
 
 </html>
