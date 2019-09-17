@@ -4,13 +4,9 @@ import entryComponent from "./entryComponent"
 const journal = {
 
     fillEntries: function () {
-        API.getJournalEntries() //Initial page load
+        return API.getJournalEntries() //Initial page load
             .then(data => {
                 entryComponent.fillArticle(data) //Fills article
-                data.forEach(element => { // For each element, assigns a delete button event handler.
-                    document.querySelector(`#deleteButton-${element.id}`).addEventListener("click", this.deleteEntryButton)
-                    document.querySelector(`#editButton-${element.id}`).addEventListener("click", this.editEntryButton)
-                });
             })
     },
 
@@ -25,16 +21,12 @@ const journal = {
                             API.getJournalEntries() //refresh page
                                 .then(data => {
                                     entryComponent.fillArticle(data) // Fills the article
+                                })
+                                .then(data => {
                                     var radio = document.getElementsByName("moodRadio");
                                     for (let i = 0; i < radio.length; i++)
                                         radio[i].checked = false; // Unchecks the radio buttons
-                                    data.forEach(element => { //For each data entry, assign an event handler
-                                        document.querySelector(`#deleteButton-${element.id}`).addEventListener("click", this.deleteEntryButton)
-                                        document.querySelector(`#editButton-${element.id}`).addEventListener("click", this.editEntryButton)
-                                    });
-
                                 })
-
                         }
                     })
             }
@@ -55,16 +47,10 @@ const journal = {
                             var radio = document.getElementsByName("moodRadio");
                             for (let i = 0; i < radio.length; i++)
                                 radio[i].checked = false; // Unchecks the radio buttons
-                            apiData.forEach(element => {
-                                document.querySelector(`#deleteButton-${element.id}`).addEventListener("click", this.deleteEntryButton)
-                                document.querySelector(`#editButton-${element.id}`).addEventListener("click", this.editEntryButton)
-                            })
                         })
                 })
-
         }
     },
-
 
     radioFunctionSearch: function (event) { //Event for Radio Buttons
 
@@ -80,10 +66,7 @@ const journal = {
                 });
                 document.querySelector(".journalArray").innerHTML = " " //Clears array
                 entryComponent.fillArticle(sortedData) //Populates article with results.
-                sortedData.forEach(element => {
-                    document.querySelector(`#deleteButton-${element.id}`).addEventListener("click", this.deleteEntryButton)
-                    document.querySelector(`#editButton-${element.id}`).addEventListener("click", this.editEntryButton)
-                })
+
             })
     },
 
@@ -98,10 +81,6 @@ const journal = {
                         var radio = document.getElementsByName("moodRadio");
                         for (let i = 0; i < radio.length; i++)
                             radio[i].checked = false; // Unchecks the radio buttons
-                        data.forEach(element => {
-                            document.querySelector(`#deleteButton-${element.id}`).addEventListener("click", this.deleteEntryButton)
-                            document.querySelector(`#editButton-${element.id}`).addEventListener("click", this.editEntryButton)
-                        })
                     })
             })
     },
@@ -136,16 +115,12 @@ const journal = {
                     }
 
                     if (dataArray.length !== 0) {
-                    document.querySelector(".journalArray").innerHTML = " " // clears article
+                        document.querySelector(".journalArray").innerHTML = " " // clears article
                         entryComponent.fillArticle(dataArray) //Fills article
-                        data.forEach(element => { // For each element, assigns a delete button event handler.
-                        document.querySelector(`#deleteButton-${element.id}`).addEventListener("click", this.deleteEntryButton)
-                        document.querySelector(`#editButton-${element.id}`).addEventListener("click", this.editEntryButton)
-                    });
-                }
-                }))
+                    }
+                })
+                )
+        }
     }
 }
-}
-
 export default journal
