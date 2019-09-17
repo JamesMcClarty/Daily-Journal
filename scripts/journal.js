@@ -56,10 +56,11 @@ const journal = {
 
         API.getJournalEntries() //Retrieves the array
             .then(data => {
-
                 var sortedData = data.filter(element => { //Filters the json and puts in the object
                     let matchesRadio = false; // boolean
-                    if (event.target.value === element.mood) { //If the radio button matches the current mood
+                    console.log(event.target.value)
+                    console.log(element.moodId)
+                    if (event.target.value === element.moodId) { //If the radio button matches the current mood
                         matchesRadio = true;
                     }
                     return matchesRadio //Returns result
@@ -86,15 +87,15 @@ const journal = {
     },
 
     editEntryButton: function (event) {
-        let entryNum = event.target.id.split("-")
-        document.getElementById("editEntryId").value = entryNum[1]
-        fetch(`http://localhost:8088/entries/${entryNum[1]}`)
+        let entryNum = event.target.id.split("-") //Splits the ID of the string!
+        document.getElementById("editEntryId").value = entryNum[1] //Gets the ID
+        fetch(`http://localhost:8088/entries/${entryNum[1]}?_expand=mood`)
             .then(response => response.json())
-            .then(parsedRespone => {
+            .then(parsedRespone => { //Fills forms
                 document.querySelector("#journalDate").value = parsedRespone.date
                 document.querySelector("#conceptsForm").value = parsedRespone.concept
                 document.querySelector("#journalEntry").value = parsedRespone.entry
-                document.querySelector("#moodOption").value = parsedRespone.mood
+                document.querySelector("#moodOption").value = parsedRespone.moodId
             })
     },
 
@@ -102,15 +103,15 @@ const journal = {
     searchEntry: function (event) {
 
         if (event.which === 13) {
-            let dataArray = []
-            API.getJournalEntries()
-                .then(data => data.forEach(entry => {
-                    for (const value of Object.values(entry)) {
-                        let searchResult = event.target.value.toString().toUpperCase()
+            let dataArray = [] //Makes data array
+            API.getJournalEntries() //Gets the entries
+                .then(data => data.forEach(entry => { //For each entry...
+                    for (const value of Object.values(entry)) { //Get the values of the article
+                        let searchResult = event.target.value.toString().toUpperCase() //Uppercase the values
                         let valueResult = value.toString().toUpperCase()
-                        if (valueResult.includes(searchResult)) {
-                            dataArray.push(entry)
-                            break
+                        if (valueResult.includes(searchResult)) { // If there is a comparison...
+                            dataArray.push(entry)//Push into the array
+                            break //Break
                         }
                     }
 

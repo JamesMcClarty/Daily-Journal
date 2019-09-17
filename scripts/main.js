@@ -1,7 +1,8 @@
 import journalObject from "./journal.js"
 
-journalObject.fillEntries()
+journalObject.fillEntries() //Fills on start up
 
+//Submits or edits form on keypress
 document.querySelector("#submitButton").addEventListener("click", function () {
     journalObject.saveEntry()
 })

@@ -1,6 +1,12 @@
+:root{
+    --dark-green: rgb(100, 117, 46);
+    --light-green: rgb(230, 247, 176);
+    --white-green: rgb(242, 251, 215);
+}
+
 
 body{
-    background-image: linear-gradient(rgb(230, 247, 176), white);
+    background-image: linear-gradient(var(--light-green), white);
     background-repeat: no-repeat;
     background-size: auto;
 }
@@ -9,11 +15,11 @@ body{
     margin-top: 2px;
     display: flex;
     flex-direction: column;
-    background-color: rgb(242, 251, 215);
+    background-color: var(--white-green)
 }
 
 h1{
-    color: rgb(100, 117, 46);
+    color: var(--dark-green);
     margin-left: 60px;
 }
 
@@ -30,18 +36,18 @@ label{
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     text-decoration: underline;
-    color: rgb(100, 117, 46);
+    color: var(--dark-green);
 }
 
 .container{
     max-width: 600px;
     height: 0,auto;
     margin-left: 60px;
-    border-bottom: solid rgb(100, 117, 46);
+    border-bottom: solid var(--dark-green)
 }
 
 #submitButton, .deleteButton, .editButton{
-    background-image: linear-gradient(white, rgb(230, 247, 176));
+    background-image: linear-gradient(white, var(--light-green));
     font-family: 'Times New Roman', Times, serif;
     border-style: groove;
     text-align: center;
@@ -63,13 +69,18 @@ label{
     background-image: linear-gradient(rgb(230,230,230), rgb(200, 217, 146));
 }
 
+.formList{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 .radioForm{
     margin-left: 60px;
     margin-top: 2px;
-    display: flex;
-    flex-direction: row;
-    background-color: rgb(242, 251, 215);
-    border: 2px solid rgb(100, 117, 46);
+    background-color: var(--white-green);
+    border: 2px solid var(--dark-green);
     width: 40%;
 }
 
@@ -96,6 +107,6 @@ label{
 }
 
 legend{
-    color: rgb(100, 117, 46);
+    color: var(--dark-green);
     font-weight: bold;
 }

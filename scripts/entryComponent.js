@@ -27,7 +27,7 @@ const entryComponentClass = {
             date: document.querySelector("#journalDate").value,
             concept: document.querySelector("#conceptsForm").value,
             entry: document.querySelector("#journalEntry").value,
-            mood: document.querySelector("#moodOption").value
+            moodId: document.querySelector("#moodOption").value
         }
         //If any of the fields are empty
         if (newJournalEntry.date === "" ||
